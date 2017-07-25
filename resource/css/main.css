@@ -1,0 +1,791 @@
+@charset "utf-8";
+/* CSS Document */
+/*ie兼容hack快查
+.test{ 
+color:red;
+color:red\9;  IE8
+*color:red;  IE6-7
+_color:red;   IE6
++color:red;   IE7
+color:red\9\0;  IE9-10
+
+//隐藏滚动条
+::-webkit-scrollbar {width: 0;height: 0;background-color: rgba(240,240,240,0);}
+//去除input默认样式
+input {-webkit-appearance:none; }
+
+
+}
+*/
+
+*{font-family: "微软雅黑";box-shadow: none;}
+/*隐藏滚动条*/
+::-webkit-scrollbar {width: 0;height: 0;background-color: rgba(240,240,240,0);}
+/*去除input 默认样式*/
+input[type="text"],
+input[type="number"],
+input[type="data"] {-webkit-appearance:none; }
+/*错误信息提示下的placeholder 样式*/
+input.warnning:-ms-input-placeholder {
+    color: red;
+    text-indent: 5px;
+}
+input.warnning::-webkit-input-placeholder {
+    color: red;
+    text-indent: 5px;
+}
+input.warnning::-moz-placeholder {
+    color: red;
+    text-indent: 5px; /* 没有用 */
+    opacity: 1!important;
+}
+/*设置input 输入框 placeholder 的字体样式*/
+::-webkit-input-placeholder {
+    text-indent: 5px;
+    font-family:'微软雅黑';
+}
+::-moz-placeholder {
+    text-indent: 5px; /* 没有用 */
+    opacity: 1!important;
+    font-family:'微软雅黑';
+}
+:-ms-input-placeholder {
+    text-indent: 5px;
+    font-family:'微软雅黑';
+}
+
+input{font-family:'微软雅黑' !important;text-indent: 5px;}
+/***/
+.box{max-width:640px;    max-width: 640px;position: absolute;top: 0;bottom: 0;left: 0;width: 100%;}
+@media (min-width:641px){
+.box{left:50%;margin-left:-320px;}
+}
+.mainBox{position: absolute;left: 5px;right: 5px;bottom: 53px;top: 53px;padding: 0;overflow-y: scroll;overflow-x: hidden;}
+.mainBox.bottom0{bottom:0px;}
+input:checked, input:hover, input:focus{border:0px;outline:none;box-shadow:none;}
+.ui-focus{box-shadow:none !important;}
+.center{float:none !important;text-align:center;}
+.btn{text-align: center;letter-spacing: 6px;font-size:1.2em;color: #FFFFFF !important;display: inline-block;border-radius: 4px;width: 100%;height: 50px;line-height: 50px;margin-top: 10px;}
+.btn.blue{background: #35A8D7 !important;}
+.btn.noRadius{border-radius: 0px !important;}
+/*地址选择*/
+.mainBox .piece{margin-top: 15px;background: #FFFFFF;position: relative;    padding: 5px 0;}
+.mainBox .piece span{font-size: 15px;padding:8px 5px ;display: inline-block;}
+.mainBox .piece>span:first-child{font-size:18px;color: #FF6648;text-decoration: underline;width:13%;text-align: center;position: absolute;}
+.mainBox .piece>div{display: inline-block;width: 85%;position: relative;left: 13%;}
+
+/*全部站点*/
+.brandBox{width: 100%;height: 120px;}
+.brandBox>.scrollImg{width:100%;height: 100%;overflow: hidden;}
+.brandBox>.scrollImg>ul{height: 100%;position: relative;left: 0;}
+.brandBox>.scrollImg>ul>li{height: 100%;float: left;}
+.brandBox>.scrollImg>ul>li>img{width: 100%;height: 100%;}
+
+.listBox{overflow-y:scroll; border-top:1px solid #dcdcdc;position: absolute;top:120px;bottom:60px;left:0px;right:0px;background: #FFFFff;width: 100%;}
+.listBox>ul{width: 100%;height: auto;}
+.listBox>ul>li{width: 46%;margin: 0 2%;float: left;height: 66px;padding: 3px 0;}
+.listBox>ul>li>a{display: block;border:1px solid #4EB2DC;border-radius: 4px;padding: 5px 0 4px 0;}
+.listBox>ul>li>a>span{display: block;text-align: center;padding: 6px 0 3px 0;}
+.listBox>ul>li>a>span:first-child{color: #4EB2DC;font-size: 14px;}
+.listBox>ul>li>a>span:nth-child(2){color: #888888;font-size: 12px;}
+.listBox>ul>li>a *{color: #000000;}
+.listBox>ul>li>a>span{white-space:nowrap; /*禁止换行*/text-overflow:ellipsis; /*文本超出隐藏*/-o-text-overflow:ellipsis;/*跟上面一样，只是为了兼容其他浏览器*/ overflow: hidden; /*隐藏，跟text-overflow配合使用*/}
+
+.allBus .putBox{position: absolute;bottom: 0px;}
+.airportBusList .putBox{position: absolute;bottom: 0px;top:auto;}
+
+/*线路详情*/
+ .mainBox .mapContainer{position: absolute;left:0;right:0;top:0;bottom:48px;}
+ .mainBox.bottom0 .mapContainer{bottom:0px;}
+ .mainBox .mapContainer.bottom0{bottom:0;}
+ .mainBox .routeMessage{position: absolute;bottom: 15px;width: 100%;left: 0;height:110px;}
+
+
+.routeMessage a *{color: #000000;font-weight: normal;text-shadow: none;}
+ .routeMessage>.piece{width:100%;}
+ .routeMessage>.piece:first-child{margin-top: 0;}
+ .routeMessage>.piece{margin-top: 15px;background: rgba(255,255,255,0.8);position: relative;}
+ .routeMessage>.piece>a>ul{width: 100%;}
+ .routeMessage>.piece>a>ul>li.firstRow>span>strong{margin:0 5px;font-size: 16px;color: #e4231a;}
+ .routeMessage>.piece>a>ul>li.firstRow>small{padding: 2px 5px;background: #969696;border-radius: 3px;margin-left: 0px;color: #FFFFFF;}
+ .routeMessage>.piece>a>ul>li{height: auto;line-height: 1em;}
+ .routeMessage>.piece>a>ul>li>span{display: inline-block;padding: 5px 5px;}
+ .routeMessage>.piece>a>ul>li.secondRow>span{font-size: 14px;}
+ .routeMessage>.piece>a>ul>li.secondRow>small{color: #959595;}
+ .routeMessage>.piece>a>ul>li.secondRow>span>i{font-size: 14px;font-weight: normal;margin: 0 7px;}
+ .routeMessage>.piece>a>ul>li.thirdRow *{color: #333;}
+ .routeMessage>.piece>a>ul>li.thirdRow>strong{    float: right;font-size: 0.9em;display: inline-block;position: relative; top: 5px;}
+ .routeMessage>.piece>a.orderbtn{height:36px;background-color:#E4231A;color:#FFFFFF;position: absolute;width:60px;line-height:10px;display: inline-block;right: 10px;bottom: 0px;    padding: 0px 6px 4px;color: #fff;border-radius: 4px;text-align: center;font-size:14px;}
+  .routeMessage>.piece>a.orderbtn>span{color: #FFFFFF;text-align: center;font-size: 12px;display: block;}
+ .routeMessage>.piece>a.orderbtn>small{position: absolute;top: 9;left: -35px;}
+ .routeMessage>.piece>a.orderbtn>i{color: #FFFFFF;margin-right: 3px;}
+@media only screen and (min-device-width : 320px) and (max-device-width :320px) {
+				.routeMessage>.piece>a.orderbtn {
+					padding: 0px;
+					font-size:12px;
+				}
+			}	
+ .mainBox .btnContainer{position: absolute;top: 10px;right: 10px;}
+ .mainBox .btnContainer a.btn{text-decoration:none;display: inline-block;padding: 5px;width: 2.5em; height:2.5em;background: #FFFFFF; text-align: center;border-radius:4px;line-height: 1.3em; margin-left: 4px; font-size: 0.9em; box-shadow: 1px 1px 5px rgba(0,0,0,.3);}
+ 
+
+/*用户手机绑定*/
+.bindingRoute{width: 100%;height: 30px;background: #f1f1f1;margin-top: 10px;}
+.bindingRoute>ul{width: 100%;height: 100%;}
+.bindingRoute>ul>li{font-size:12px;text-align:center;position:relative;width: 25%;height: 100%;float: left;background: #FFFFFF;line-height: 260%;margin: 0 4%;}
+.bindingRoute>ul>li:before{content: '';position: absolute;left:-16px;top:0;border-top: 15px solid #FFFFFF;border-bottom: 15px solid #FFFFFF;border-left: 17px solid transparent;}
+.bindingRoute>ul>li:after{content: '';position: absolute;right:-19px;top:0;border-top: 15px solid transparent;border-bottom: 15px solid transparent;border-left: 20px solid #FFFFFF;}
+
+.bindingRoute>ul>li.active{background: #2BA3D5;color:#FFFFFF}
+.bindingRoute>ul>li.active:before{border-top: 15px solid #2BA3D5;border-bottom: 15px solid #2BA3D5;}
+.bindingRoute>ul>li.active:after{border-left: 20px solid #2BA3D5;}
+
+.binding{position: absolute;top: 180px;bottom: 0px;left: 0;right: 0;}
+
+.binding>div.pageone{width: 100%;height: 100%;display: block;}
+.binding>div.pageone{display: block;}
+.binding>div.pagetwo{display: block;width: 100%;height: 100%;position: relative;}
+
+.binding>div.pageone>div{width: 100%;height: 50px;line-height: 50px;margin-bottom: 5px;position: relative;}
+.binding>div.pageone>div>i{color:#555;position: absolute;top: 15px;left: 15px;font-size: 18px;}
+.binding>div.pageone>div input{padding-left: 50px;height: 100%;border: 0px;outline: none;}
+.binding>div.pageone>div>div{height: 100%;margin:0; border: 0;}
+.binding>div.pageone>div.phone input{width: 100%; background: #fff; border: 1px solid #c5c5c5; border-radius:5px;}
+.binding>div.pageone>div.code>div{width: 59%;display: inline-block; border: 0;}
+.binding>div.pageone>div.code>div>input{width: 100%;background: #fff; border: 1px solid #c5c5c5; border-radius:5px;}
+.binding>div.pageone>div.code>a.btn{width: 39%;height: 100%;line-height: 50px;font-size: 16px;background-color: #E4231A;}
+.binding>div.pageone>div.code>i{margin-top: 12px;}
+.binding>div.pageone>a{width: 100%;height: 40px;line-height: 40px;font-size: 16px;margin-top:20px;background: #E4231A;}
+.binding>div.pageone>span{display: block;width: 100%;height: 40px;line-height: 40px;text-align:center;font-size: 16px;margin-bottom: 0px;}
+
+a.btn.check{border: 0px;background: #FF6648;}
+
+.binding>div.pagetwo>div{width: 100%;height: 60%;position: relative;text-align: center;}
+.binding>div.pagetwo>div>img{position: relative;top: -100px;margin-top: 30%;width: 200px;height: 240px;}
+.binding>div.pagetwo>span{display: block;width: 100%;height: 50px;line-height: 50px;text-align: center;font-size: 16px;}
+.binding>div.pagetwo>a{width: 100%;height: 40px;line-height: 40px;    background-color: #3dbff0;font-size: 16px;position: absolute;bottom: 20px;}
+
+/*积分列表*/
+span.taged{padding: 5px 10px;border:0;border-radius: 6px;}
+.orderList{width: 100%;}
+.pieceBox>a *{color: #000000;font-weight: normal;}
+.pieceBox{width:100%;margin-bottom: 10px;padding: 5px 0 10px;position: relative;border-bottom: 1px solid #EEEEEE;}
+.pieceBox ul{}
+.pieceBox ul>li{padding: 5px 10px;}
+.pieceBox ul>li>span.colored{color: #FE9133;font-size: 18px;}
+.pieceBox ul>li>span.taged{padding: 5px 10px;border: 1px solid #EEEEEE;border-radius: 6px; border: 0;}
+.pieceBox ul>li>span.noPay{background-color: #DA1D05;color: #FFFFFF;}
+.pieceBox ul>li>small{font-size: 14px;}
+.pieceBox ul>li>span,
+.pieceBox ul>li>small{margin: 0 2px 0 3px;}
+.pieceBox ul>li:last-child *{color: #555;}
+.pieceBox ul>li:last-child>span.taged{margin-left: 10px;color: #777;}
+.pieceBox ul>li:nth-child(2)>span{margin-right: 30px;}
+.pieceBox>a>span{position: absolute;right: 10px;top: 50%;margin-top: -10px;font-size: 20px;color: #777777;}
+
+.orderList>.pieceBox:last-child{border-bottom: 0px;}
+
+/*积分详情   我的订单*/
+.mainBox .orderMessage{width: ;padding: 0;}
+.mainBox .orderMessage>ul{border: 0px solid #eee;}
+.mainBox .orderMessage>ul>li{padding-right:10px;height: 50px;line-height: 50px;background: #FFFFFF;border-bottom: 1px solid #ececec;border-left: 1px solid #ececec;border-right: 1px solid #ececec;clear:both;}
+.mainBox .orderMessage>ul>li:first-child,.mainBox .orderMessage>ul>li:last-child{ border-top: 1px solid #ececec;}
+.mainBox .orderMessage>ul>li>img{display: inline-block;width: 24px !important;height: 24px !important;margin: 0 0px 0 10px;}
+.mainBox .orderMessage>ul>li>img.busTypeImg{margin-top:10px;width: 30% !important;height:auto !important;float: right;}
+.mainBox .orderMessage>ul>li>span{display: inline-block;}
+.mainBox .orderMessage>ul>li>span:last-child{float: right;}
+.mainBox .orderMessage>ul>li>span.price{font-size:1.5em;}
+.mainBox .orderMessage>ul>li.busType{margin-top: 10px;margin-bottom: 10px;height: 60px;line-height: 60px; border-top: 1px solid #ececec;}
+
+.mainBox .ticktState{width: 100%;height: 50px;}
+.mainBox .ticktState>span{display: inline-block;width: 70%;height: 100%;line-height: 50px;text-align: center;color: #FFFFFF;background: #bebebe;}
+.mainBox .ticktState>a{display: inline-block;width: 28%;text-align: center;line-height: 50px;background: #45C2F0;color: #FFFFFF;}
+.mainBox .ticktState.out{display: none;}
+.mainBox .ticktState.in{display: block;}
+.mainBox .ticktState>a.qrcode{margin:5px 0 0 0 ;padding:0;width: 100%;height: 100%;line-height:50px; background: #45C2F0;text-align: center;border-radius: 0;}
+.mainBox .ticktState>a.qrcode>i{font-size: 30px;margin-left: 7px; position: absolute; margin-top: 10px;}
+
+.mainBox a.btn.judge{width: 100%;height: 50px;line-height: 50px;background: #ff902e;border-radius: 0;margin-top: 10px;}
+
+.qrcodePop{width: 300px;height: 400px;text-align: center;}
+.qrcodePop img{width: 300px;height: 300px;display: block;margin-top: 20px;}
+.qrcodePop>span{display: block;text-align: center;margin-top: 15px !important;}
+
+/*我的建议*/
+.mainBox .editChosen{width: 100%;position: absolute;top: 0;bottom: 0;}
+.mainBox .editChosen>li{width: 50%;height: 40px;float: left;}
+.mainBox .editChosen>li>span{border-bottom:2px solid #E8E8E8;display: block;text-align: center;width: 100%;height: 100%;line-height: 40px;}
+.mainBox .editChosen>li:first-child>span{border-right: 1px solid #E8E8E8;}
+.mainBox .editChosen>li>.editBox{display:none;position: absolute;top: 42px;bottom: 0;left: 0;right: 0;overflow-y: scroll;}
+.mainBox .editChosen>li>.editBox.list{background: #E5E5E5;}
+.mainBox .editChosen>li>.editBox>textarea{width: 100%;height: 150px !important;outline: none;box-shadow: none;}
+.mainBox .editChosen>li.active>.editBox{display: block; background: #fff;}
+.mainBox .editChosen>li.active>span{border-bottom: 2px solid #329AFD;background: url(../../resource/image/main/u23.png) no-repeat center !important;background-size:0px;color:#fff;font-weight:900;}
+
+.mainBox .picUpload{position: relative;margin-top: 10px;}
+.mainBox .picUpload>span{display: block;text-align: left;height: 40px;line-height: 40px;padding-left: 10px;}
+.mainBox .picUpload>div{width: 100%;height: 50px;padding: 5px 0;text-align: left;}
+.mainBox .picUpload>div>a{display: inline-block;width: 50px;height: 50px;font-size: 30px;background: #E3E3E3;color: #C5C5C5;text-align: center;line-height: 50px;margin: 0 10px;}
+
+.mainBox .publish{width: 100%;height: 40px;line-height: 40px;text-align: center;background-color: #EB500D;margin-top: 20px;}
+/*原来 .mainBox .phoneNum{width:auto;display: block;height: 50px;line-height:50px;margin-bottom:10px;margin-top:20px;color: #888888;padding: 0 10px;border: 1px solid #ccc;border-radius: 4px;}
+.mainBox .phoneNum>span{display: inline-block;width:auto;font-size: 1.3em;}
+.mainBox .phoneNum input{width: auto;height: 100%;border: 0px;color: #888888;font-size: 1.3em;outline: none;box-shadow: none;}
+.mainBox .phoneNum>div{display: inline-block;    box-shadow: none;border: 0px;margin: 0;padding: 0;} */
+.mainBox .phoneNum{width:94%;display: block;height: 40px;line-height:40px;margin-bottom:10px;margin-top:20px;color: #888888;padding: 0 2%;border: 1px solid #ccc;border-radius: 4px;}
+.mainBox .phoneNum>span{width:auto;font-size: 1.2em;}
+.mainBox .phoneNum>div{display: inline-block;width:67%;box-shadow: none;border: 0px;margin: 0;padding: 0;}
+.mainBox .phoneNum>div>input{text-align:right;width: 100%;height: 100%;border: 0px;color: #888888;font-size: 1.2em;outline: none;box-shadow: none;}
+
+
+/* /*2016年4月7日  覆盖上面
+.mainBox .phoneNum>span{width:30%;}
+.mainBox .phoneNum>input{width:65%;padding:0px} */
+
+
+.mainBox .advicePiece{margin-bottom: 10px;padding: 5px; border: 1px solid #ececec;}
+.mainBox .advice,
+.mainBox .answer{position:relative;height:auto;padding: 5px 10px;}
+.mainBox .advice{background: #fff;}
+.mainBox .answer{background: #3DBFF0;color: #FFFFFF;}
+.mainBox .advice>p,
+.mainBox .answer>p{font-size: 16px;line-height: 1.5em;}
+.mainBox .advice>span,
+.mainBox .answer>span{display:block;font-size:12px;color:#AAAAAA;padding: 8px 20px 2px 0;}
+.mainBox .advice>span{text-align: left;}
+.mainBox .answer>span{text-align: right;color: #333333;}
+
+/*积分细则*/
+.intHeader{width: 100%;position: absolute;top:-5px;height: 160px;background: #F3F3F3;text-align: center;}
+.intHeader .circle{display: inline-block;width: 100px;height: 100px;border-radius: 50px;background: #FE902F;color: #FFFFFF;position: absolute;top: 50%;left: 50%;margin-top: -50px;margin-left: -50px;}
+.intHeader .circle>span,
+.intHeader .circle>strong{display: block;line-height: 1.8em;}
+.intHeader .circle>span{margin-top: 10px;}
+.intHeader .circle>strong{font-size: 26px;font-weight: normal;}
+.intHeader>a.taged{padding: 4px 10px;background: #E1E1E1;border: 1px solid #D2D2D2;border-radius: 3px;    position: absolute; right: 10px;color: #333;top: 10px;}
+
+.getDetail {position: absolute;top: 170px;bottom:0;width: 100%;text-align: center;}
+.getDetail>span.taged{background: #FB9028;color: #FFFFFF;box-shadow: none;text-shadow: none; font-size: 0.85em;}
+.getDetail>span.detail{color:#C6C6C6;position: absolute;display: inline-block;padding: 5px 10px;background:#f2f2f2 ;top: 45px;z-index:1;left: 50%;margin-left: -42px;}
+.getDetail>ul{border-top: 1px solid #C6C6C6;position: absolute;overflow-y:scroll ;top: 60px;width: 100%;    bottom: 0;padding-top: 20px;}
+.getDetail>ul>li{padding: 10px 5px;position: relative;}
+.getDetail>ul>li>span,
+.getDetail>ul>li>small{display: block;text-align: left;line-height: 1.8em;}
+.getDetail>ul>li>small{color: #888;}
+.getDetail>ul>li>span:last-child{position: absolute;right: 10px;bottom: 20px;color: #FB9028;font-size: 18px;}
+
+
+/*机场快线  订单详情*/
+.chosen{width: 100%;height: 135px;background: #FFFFFF;margin-bottom: 10px;padding-top: 5px;border-top: 1px solid #EDEDED;}
+ .chosen>ul{width: 100%;height: 100%;}
+ .chosen>ul>li{width: 32%;height: 100%;float: left;}
+ .chosen>ul>li>span{font-size:15px;display: block;text-align: center;color: #959595;margin-bottom: 10px;}
+ .chosen>ul>li.active>span{color: #222222;}
+ .chosen>ul>li>span.chosenBtn input{display: none;}
+ .chosen>ul>li>span.chosenBtn>i{display: none;}
+ .chosen>ul>li>span.chosenBtn{display: block;width: 16px;height: 16px;line-height:16px;box-shadow: inset 0 0 10px #CCCCCC;text-align: center;margin-left: 50%;position: relative;left: -8px;} 
+ .chosen>ul>li.active>span.chosenBtn>i{display: inline-block;}
+ .chosen>ul>li.active>span.chosenBtn{box-shadow:none;font-size: 16px;background-color: #ffc600;color: #fff; font-weight: normal;}
+ 
+ .mainBox .orderMessage>ul>li.carType{height: auto;padding-right: 0 !important;}
+ .mainBox .orderMessage>ul>li.carType .chosen img{width: 60% !important; height:auto !important;}
+ 
+ .orange{color: #FFBE0C;}
+  
+ .seatPop{width: 200px;height: 150px;border-radius: 6px;border: 1px solid #fff;position: relative;}
+ .seatPop>div{width: 100%;height: 100%;overflow-y: scroll;}
+ .seatPop>div[role=line]{position: absolute;z-index:0;display: block;left:15px;width: 200px;height: 50px;line-height: 50px;top:65px;border-top: 1px solid #888888;border-bottom: 1px solid #888888;background: transparent;}
+
+ .seatPop>div>ul{background: transparent;position: relative;z-index: 1000;}
+ .seatPop>div>ul>li{height: 50px;line-height: 50px;text-align: center;background: transparent;font-size: 20px;color: #999999;}
+ .seatPop>div>ul>li.active{color: #E94601;font-weight: bold;}
+ 
+ .airportOrder .orderMessage>ul>li>a{float: right;color: #888888;font-weight: normal;}
+ 
+ /*线路查询页面  附近站点*/
+.aroundPoint{margin-top: 20px;}
+.aroundPoint>h4{height: 40px;line-height: 40px;padding-left: 10px;}
+.aroundPoint>div{padding-top: 10px;padding-left: 5px;}
+.aroundPoint>div>span.taged{display: inline-block;margin-right: 5px;}
+
+/*机场线路查询*/
+.exchangeInput{position: relative;height: 100px ;  margin-top: 10px;background-color: #fff; border: 1px solid #eee;}
+.exchangeInput>div.inputContainer{position: absolute;height: 100%;left: 0;right: 55px;}
+.exchangeInput>div.inputContainer>div{line-height:50px;width: 100%;height: 50px;margin: 0;padding: 0; padding-left: 10px;}
+.exchangeInput>div.inputContainer>div:first-child{border-bottom: 1px solid #eee;}
+.exchangeInput>div.inputContainer>div>img{width: 16px !important;height: 16px !important;display: inline-block;}
+.exchangeInput>div.inputContainer>div>span{display: inline-block;height: 100%;/* padding: 2px 10px; */width:25%;text-align:center;}
+.exchangeInput>div.inputContainer>div>div{box-shadow:none;margin: 0;padding: 0;border: 0;display: inline-block;width:60%;}
+.exchangeInput>div.inputContainer>div>div>input{border: 0px;height: 100%;outline: none;}
+.exchangeInput>span{    line-height: 100px;text-align: center;position: absolute ;display: inline-block;top: 0;right: 0;width: 40px;height: 100%;}
+.exchangeInput>span>img{width: 30px !important;height:30px !important;}
+
+
+
+/*商务车订单*/
+.orderMessage li.input>div{display: inline-block;border: 0px;text-shadow:none;box-shadow: none;border-radius: 0px;float: right;    margin: 0;height: 100%;}
+.orderMessage input::-webkit-input-placeholder{color:#888;font-family:'微软雅黑';}
+.orderMessage li.input>#sitNum{display:none;}
+.orderMessage li.input>a:last-child{float:right;}
+ .orderMessage li>div>input{text-align:right;border: 0px;border-radius: 0px;outline: none;height: 100%;}
+ .orderMessage li>div>input:focus{outline: none;}
+ .businessBusOrder .orderMessage li.textBox{border-bottom: 0px;background: none;}
+ .businessBusOrder .orderMessage li.textBox>div{text-align: center;font-size: 1.2em;display: block;}
+ .businessBusOrder .orderMessage li.textBox>div>strong{font-size: 1.5em;}
+ .businessBusOrder .chosen>ul>li{width: 50%;}
+ .businessBusOrder .chosen>ul>li>span{margin-bottom: 0px;}
+ .businessBusOrder .chosen .ui-radio{display: none;margin: 0;}
+ .red{color: #e4231a;}
+ 
+/*商务车线路详情*/
+.businessBusDetail .mainBox .mapContainer{background: url(../image/main/map3.jpg) center no-repeat;}
+.businessBusDetail .mainBox .btnContainer a.btn:first-child{color: #46C6E7 !important;}
+.businessBusDetail .mainBox .btnContainer a.btn:last-child{color: #E7393A !important;}
+
+
+/*商务车选择下车地点*/
+ .stopPoint .mainBox .mapContainer{background: url(../image/main/map3.jpg) center no-repeat;}
+.stopPoint .mainBox>a.btn{position: absolute;bottom: 5px;}
+.stopPoint .mainBox>span.tip{background: rgba(254,144,46,0.9);display: block;position: absolute;top: 10px;color: #FFFFFF;font-size: 0.9em;}
+.stopPoint .mainBox>span.tip>i{color: #FFFFFF;display: inline-block;width: 18px;height: 18px;border-radius: 9px;background:#FDBC0A;line-height: 18px;text-align: center;}
+
+/*机场bus 查询*/
+.searchAir .todayRoute{margin-top: 10px;}
+.searchAir .todayRoute .routeBox{padding: 5px 8px;}
+.searchAir .todayRoute .routeBox>span{display: block;line-height: 1.8em;}
+.searchAir .todayRoute .routeBox>div>span{line-height: 1.8em;}
+.searchAir .todayRoute .routeBox>div>span:last-child{float: right;display: inline-block;color: #888888;}
+.searchAir .todayRoute .routeBox>div>span:first-child{font-size: 1.2em;color: #E82118;}
+.searchAir .todayRoute .routeBox>div>span:first-child>i{color: #666666;margin-right: 6px;}
+.searchAir .todayRoute>h4{height: 40px;line-height: 40px;padding-left: 10px;/*box-shadow: 0 1px 3px #DDDDDD;*/}
+
+/*机场bus 线路详情*/
+.airPortBusDetail .mainBox .mapContainer{background: url(../../resource/image/main/map2.jpg) center no-repeat;}
+.mainBox .btnContainer a.btn:first-child{color: #46C6E7 !important;}
+.mainBox .btnContainer a.btn:nth-child(2){color: #E7393A !important;}
+.airPortBusDetail .routeMessage>.piece>a.orderbtn{width: 60px;}
+
+.busDetail .mainBox .mapContainer{background: url(../../resource/image/main/map.jpg) center no-repeat;}
+
+/*手机绑定页面*/
+.bindingpage .btn{text-align: center;color: #FFFFFF !important;display: inline-block;border-radius: 4px;}
+
+/*用户信息完善*/
+.userReg>div{width: 100%;height: 50px;position: relative;border-bottom: 1px solid #f2f2f2;}
+.userReg>div>i{position: absolute;font-size: 16px;top:18px;left: 10px;color:#777;}
+.userReg>div>div{width: 100%;height: 100%;padding: 0;margin: 0;border: 0px;border-radius: 0;box-shadow: none;}
+.userReg>div>div>input{height: 100%;padding-left: 50px;border: 0px;box-shadow: none;}
+.userReg>div.radio{line-height: 3.5em;}
+.userReg>div.radio>div{display: inline-block;width: 20px;height:20px;margin-right: 30px;}
+.userReg>div.radio>span{display: inline-block;}
+
+
+/*线路详情  显示全部站点列表*/
+.pointList{display: none;width: 160px;height: 250px;border: 1px solid #DDDDDD;border-radius: 4px;background: #FFFFFF;overflow:hidden ;padding: 10px;margin-top: 5px;position: absolute;top: 100%;right: 0%;}
+.pointList ul{    padding: 0 5px;    padding-top: 10px;padding-left:8px;width: 100%;height: 100%;overflow-y: scroll;}
+.pointList ul>li:before{content: '';display: inline-block;width: 10px;height: 10px;background: #fff;border: 3px solid #2BA3D5;border-radius: 10px;margin-left: 0;margin-right: 20px;position:absolute;left:-8px;top:-6px;}
+.pointList ul>li{/* padding: 5px 0; */position:relative;border-left:1px solid #2BA3D5;height:2em;line-height:3px;padding-left:24px;}
+.pointList ul>li:last-child{border-left:0px;}
+
+
+
+/*用户信息 页面样式*/
+ .userDetail{background: #ECECEC;}
+.userDetail ul>li:first-child{height: 60px;}
+ .userDetail ul>li:first-child~li{border-bottom: 1px solid #D7D7D7;}
+.userDetail ul>li{width: 100%;height: 50px;}
+.userDetail ul>li:first-child>a.btn{width: 30%;display: inline-block;height: 32px;line-height: 32px;margin: 0;}
+.userDetail ul>li:first-child>span{display: inline-block;width: auto;height: 100%;line-height: 40px;margin-right: 3%;}
+.userDetail ul>li:first-child>span>img{width: 40px;height: 40px;}
+
+.userDetail ul>li.li>a *,
+.userDetail ul>li.li>a{color: #222;}
+.userDetail ul>li.li>a{width: 100%;height: 100%;line-height: 50px;}
+.userDetail ul>li.li>a>i{color: #9A9A9A;margin: 0 10px;}
+
+
+/*机场bus 在线选座*/
+
+#busSeatPop{width: 100%;height: 100%;}
+
+.mapContainer{background: none !important;position: absolute !important;}
+.anchorBL{display: none !important;}
+
+/*文件上传*/
+.fileUp>form>div:first-child{display:none;}
+.fileUp>form>input[type='file']{margin:20px 0;}
+
+/*商务车订单*/
+.orderMessage>ul>li:first-child select{ margin-top:10px;   float: right;width: auto;height: 60%;border-radius: 4px;border: 1px solid #cdcdcd;color: #666;display: inline-block;}
+.businessBusOrder .chosen>ul>li>span.imgBox{width:100%;height:70px;}
+
+
+/*失物招领   列表*/
+.mainBox .number{position: absolute;top: 0;left: 0;right: 0;height: 40px;line-height: 40px;text-align: center;color: #25A3D5;box-shadow: 0 1px 2px #CCCCCC;font-size: 1.3em;}
+.mainBox .lostList{position: absolute;top: 40px;left: 0;right: 0;bottom:55px;overflow-y: scroll;}
+.mainBox .lostList>li{padding: 10px;border-bottom: 1px solid #D0D0D0;position: relative;background:#fff;margin-bottom:10px;}
+.mainBox .lostList>li>img{display: inline-block;float:left;margin-right:15px;width: 80px !important;height: 80px !important;}
+.mainBox .lostList>li>div{display: inline-block;}
+.mainBox .lostList>li>div{display:block;width:100%;height:100%;line-height:2.5em;}
+.mainBox .lostList>li>div>i{position:absolute;top:50%;margin-top:-10px;font-size:18px;right:10px;color:#999;}
+.mainBox .lostList>li>div>span{display: block;line-height: 1.8em;}
+.mainBox .lostList>li>div>span:first-child{font-size: 18px;}
+.mainBox .lostList>li>div>span:nth-child(2){font-size: 15px;color: #888888;}
+.mainBox .lostList>li>div>span:last-child{color: #888888;}
+.mainBox .lostList>li>div>span:last-child>small{margin-right: 20px;font-size: 14px;}
+.mainBox .lostList>li>div>span:last-child>small>i{color: #D62C1B;margin-right: 8px;font-size: 16px;}
+.mainBox .lostList>li>div>div>span:last-child{display: inline-block;float: right;position: absolute;top: 5px;margin-top: 0;color: #FFFFFF;right: 30px;padding:4px 9px;font-size:0.9em;    line-height: 1.5em;}
+.mainBox .lostList>li>div>div>span:last-child.not{background: #E3231C;}
+.mainBox .lostList>li>div>div>span:last-child.yes{background: #4CB266;}
+
+/*未领取   not    已领取  yes*/
+
+.mainBox a.bottom{position: absolute;bottom: 5px;}
+
+/*广告页面 小件快递*/
+.ad{background:#D6D6D6;}
+.adList{padding:0 5px;}
+.adList>.adPiece{margin-bottom:10px;background:#fff;box-shadow:1px 1px 3px #bbb;}
+.adList>.adPiece>h3{font-size:1.3em;font-weight:bold;padding-left:10px;margin-bottom:10px;}
+.adList>.adPiece>img{height:150px !important;margin-bottom:5px;}
+.adList>.adPiece>p{padding:10px 5px;font-size:1.2em;line-height:1.8em;text-indent:1.4em }
+
+/*小件快递*/
+
+
+/*businessChosen  页面*/
+.businessChosen{background: #F2F4EF;}
+.mainBox>h4{height: 50px;line-height: 50px;padding-left: 10px;}
+.mainBox>div.tagedBox{width:100%;}
+.mainBox>div.tagedBox>span.taged{background:#FFFFFF;border:1px solid #EEEEEE;padding:0;display:inline-block;/* float:left; */width: 26%;height: 40px;line-height: 40px;text-align: center;margin: 1% 2%;}
+.mainBox>div.tagedBox>span.taged:hover,.mainBox>div.tagedBox>span.taged:focus{background: #f3f3f3;}
+
+/*周边服务页面*/
+.surround .brandBox{height:200px;}
+.surround .surroundList{position:absolute;bottom:0;top:220px;width:100%;}
+.surround .surroundList >ul{width:100%;height:100%;}
+.surround .surroundList >ul>li{width:31%;height:auto;float:left;margin:0 1%;}
+.surround .surroundList >ul>li>a{color:#000;font-weight:normal;width:100%;display:inline-block;height:90px;line-height:60px;text-align:center;background:#2BA3D5;color:#fff;padding-top:10px;}
+.surround .surroundList >ul>li>a>i{font-size:44px;display:block;}
+.surround .surroundList >ul>li>a>span{font-size:1.2em;}
+.surround .surroundList>div{position:absolute;top:110px;bottom:10px;left:1%;right:2%;background:#fff;}
+.surround .surroundList>div.youhui>h4{padding-left:10px;box-shadow:inset 0 0 8px #ccc;height:40px;line-height:40px;font-size:1.2em;color:#2BA3D5;}
+.surround .surroundList>div.youhui>div{}
+
+/*lfh 页面*/
+.companyList{height:200px;} 
+.companyList>ul{height:100%;} 
+.companyList>ul>li{width:48%;height:47%;float:left;margin:1%;} 
+.companyList>ul>li>a{display:block;padding:10px;height:80%;line-height:100px;color:#fff;font-weight:normal;} 
+.companyList>ul>li>a:focus,
+.companyList>ul>li>a:visited{color:#fff;}
+.companyList>ul>li:first-child>a{background:#28CDA3;}
+.companyList>ul>li:nth-child(2)>a{background:#FFCA26;}
+.companyList>ul>li:nth-child(3)>a{background:#FF6678;}
+.companyList>ul>li:nth-child(4)>a{background:#1DB2DC;}
+.companyList>ul>li>a>i{display:inline-block;font-size:44px;} 
+.companyList>ul>li>a>span{display:inline-block;font-size:1.2em;} 
+.company .brandBox{height:200px;margin-bottom:10px;}
+.mainBox >div.l{text-align:center;position:fixed;bottom:15px;width:100%;}
+.mainBox >div.l>span{font-size:0.8em;color:#aaa;}
+
+/*编辑失物招领*/
+.editLost form{padding:5px;border:1px solid #dcdcdc;margin:5px;background:#fff;border-radius:6px;}
+.editLost .inputBox.textBox>textarea{margin:0;display:inline-block;height:100px !important;}
+.editLost .inputBox >div{box-shadow:none;}
+.editLost .inputBox >div >input{box-shadow:none;}
+
+/*失物详情页面*/
+.mainBox .titleBox>h2,
+.mainBox .titleBox>span{line-height: 1.5em;}
+.mainBox .titleBox>span>small{margin-right: 20px;color: #CCCCCC;}
+
+.mainBox .lostDetail>div>span{display: inline-block;padding: 8px 0;font-size: 18px;}
+.mainBox .lostDetail>div>span.left{padding-left: 10px;padding-right: 5px;}
+.mainBox .lostDetail>div>span.right{padding-left: 15px;}
+
+.mainBox .imgBox{width: 100%;height: 350px;}
+.mainBox .lostDetail>.imgBox>span{display: block;height: 30px;line-height: 30px;padding-left: 10px;}
+.mainBox .imgBox>div{height: 120px;}
+/* .mainBox .imgBox>div>img{width: 20%;margin: 0 2%;} */
+.mainBox .imgBox>div>img{width: 35%;height:auto;margin: 0 2%;}
+
+.mainBox .discussBox{border-top: 1px solid #C8C8C8;padding: 10px 0;position: relative;bottom: 55px;}
+.mainBox .discussBox>.dPiece{border-bottom: 1px solid #C8C8C8;}
+.mainBox .discussBox>.dPiece>h5>span{line-height: 2em;font-size: 16px;}
+.mainBox .discussBox>.dPiece>h5>span:last-child{float: right;margin-right: 10px;color: #CCCCCC;}
+.mainBox .discussBox>.dPiece>h5>span>i{font-size: 20px;}
+.mainBox .discussBox>.dPiece>p{font-size: 16px;line-height: 1.8em;margin: 3px 0;}
+.mainBox .discussBox>.dPiece>span{display: block;text-align: right;line-height: 1.8em;font-size: 14px;color: #C8C8C8;}
+
+.inputAbtn{height: 50px;width: 100%;position: relative;bottom: 0px;}
+.inputAbtn>div{display: inline-block;position: absolute;border-radius:0px;left: 0;right: 75px;bottom:0px;top:0px;margin: 0;padding: 0;}
+.inputAbtn>div>input{height: 100%;width: 100%;outline:none;border-radius: 0px;}
+.inputAbtn>span{display: inline-block;width: 70px;height: 100%;line-height: 50px;color: #FFFFFF;text-align: center;position: absolute;right: 0;top: 0;}
+.inputAbtn>span.orange{background: #FFBE0C;}
+
+.lostDetail .inputAbtn{position: absolute;bottom: 5px;background: #FFFFFF;}
+.lostDetail .centerBox{position: absolute;bottom: 0px;overflow-y: scroll;top: 0;width:100%;}
+
+
+ a.putBox{display:block;height:45px;text-align:center;padding:0 1.5%;line-height:45px;color:#000;font-weight:normal;}
+a.putBox>span{display:inline-block;color:#D2332C;}
+a.putBox>span>img{width:100%;height:100%;}
+a.putBox>span.left{width:24px;height:24px;float:left;}
+a.putBox>span.right{width:24px;height:24px;float:right;}
+.bus .exchangeInput>div.inputContainer>div>div{width:70%;}
+a.taged{letter-spacing: 3px;  color: #fff !important;/* background-color: #dcdcdc; */ padding: 4px 10px;}
+
+/*top -------------------------------修改*/
+a.putBox>span.right{margin-right:0px;}
+.topIcon{position:absolute;z-index:11;display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;background:#35A8D7;border-radius:20px;border:2px solid #fff;color:#fff;font-size:18px;top:20px;right:0;color:#fff;}
+.topIcon i{color:#fff;}
+.topIcon:visited,
+.topIcon:focus{color:#fff;}
+.topIcon:visited i,
+.topIcon:focus i{color:#fff;}
+.mainBox{top:10px;background:#f2f2f2;}
+.mainBox.float{top:10px;background:#f2f2f2;position:absolute;}
+.mainBox.hidden{left:100%;z-index:11;-webkit-transition:all .15s linear;}
+.mainBox.shown{left:0;z-index:11;-webkit-transition:all .15s linear;}
+/*地图容器   去掉top 一条之后 样式调整*/
+.mainBox .mapContainer{top:10px;}
+/*busDetail 页面调整*/
+.mainBox .btnContainer{left:10px;right:auto;}
+.pointList{left:0%;right:auto;}
+
+/*inputBox 调整*/
+a.putBox{width:95%;}
+/* .allBus a.putBox>span.right,
+.airportBusList a.putBox>span.right{margin-right:10px;} */
+.orderMessage>ul>li:first-child select{margin-right:0px;}
+
+.stopPoint .mainBox>span.tip.bottom{bottom:70px;top:auto;width:94%;}
+.stopPoint .mainBox>span.tip.bottom>i{float:right;}
+.stopPoint .mainBox>span.tip.bgred{background:#E32B08;    left: 50%;margin-left: -130px;}
+.stopPoint .mainBox>span.tip.bgred>i{background:rgba(255,255,255,0.4);}
+
+/*城际巴士 选择出发地目的地  页面*/
+
+.searchTop{background: #2ba3d5; height: 3em; width: 100%; line-height: 48px;text-align: center;}
+.searchTop input{border-radius: 4px;    width: 50%;margin:0 5%;height: 60%;border: 0px;background: #FFFFFF;color: #000000; box-shadow: none;    padding-left: 10px;}
+.searchTop a.left{font-size: 26px;color: #fff; display: inline-block; width: 30px; height: 30px;text-align: center;line-height: 26px;border-radius: 19px;/* box-shadow: inset 0 0 10px #fff; */border:1px solid #fff;}
+.searchTop a.right{color: #fff;display: inline-block;width: 50px;height: 60%;line-height: 1.8em;border: 1px solid #fff;text-align: center; border-radius: 6px; box-shadow: inset 0 0 4px;}
+.searchTop a.right:focus,
+.searchTop a.right:visited,
+.searchTop a.left:focus,
+.searchTop a.left:visited{color:#fff;}
+.pieceContainer{position:absolute;top:48px;bottom:0;overflow-y:scroll;width:100%;}
+
+/*busList*/
+.searchBus .listBox>ul>li{float:none;width:100%;height:auto;margin-left:0;margin-right:0;    margin-bottom: 10px;margin-top: 5px;}
+/* .searchBus .listBox>ul>li:first-child>a{border-bottom:0px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;} */
+.searchBus .listBox>ul>li>a{border-color:#dcdcdc;}
+.searchBus .listBox>ul>li>a>span{text-align:left;padding-left:10px;}
+.searchBus .listBox .walkPanel{padding:10px;background:none;border: 1px solid #dcdcdc;margin-top:10px;}
+.searchBus .listBox .walkPanel>div>i{font-size:20px;margin-right:20px;color:#555;}
+.searchBus .listBox .walkPanel>div>i.fa-ellipsis-v{margin-left:5px;margin-right:30px;}
+.searchBus .listBox .walkPanel>div>i.fa-map-pin{margin-right:27px;}
+.searchBus .listBox .walkPanel>div i.start{font-size:14px;font-style:normal;display:inline-block;width:20px;;height:20px;line-height:20px;text-align:center;background:#6CB33E;color:#fff;}
+.searchBus .listBox .walkPanel>div i.end{font-size:14px;font-style:normal;display:inline-block;width:20px;;height:20px;line-height:20px;text-align:center;background:#E95045;color:#fff;}
+.searchBus .listBox .walkPanel>div{line-height:2.2em;}
+.searchBus .listBox .walkPanel>div.line{line-height:4em;position:relative;padding-left:40px;}
+.searchBus .listBox .walkPanel>div.line>span>i{margin-right:10px;}
+.searchBus .listBox .walkPanel>div.line>i.line{display:inline-block;width:1px; height:100%;background:#aaa;position:absolute;left:10px;}
+.searchBus .listBox>ul>li>a>span:first-child{font-size:15px;}
+.searchBus .listBox>ul>li>a>span:nth-child(2){font-size:15px;}
+
+
+/*---------------------2016/3/17  补充---------------------------*/
+.mainBox .btnContainer a.btn{    letter-spacing: 0;}
+.routeMessage>.piece>a.orderbtn{letter-spacing: 0;}
+.aroundPoint>div>span.taged{background:#fff;margin-bottom: 10px;}
+.orderNum input {border: 1px solid #ccc;border-radius:3px;margin-left:10px;width: 40px;height:1.5em;margin-right:3px;}
+.orderNum i{display: inline-block; padding: 3px 9px;background-color: #dcdcdc; border-radius: 3px;font-weight:normal;font-style:normal;}
+.orderNum i:last-child{margin-left:15px;}
+
+.myOrder .mainBox .orderMessage>ul>li>span:last-child{    width: 66%;text-align: right;}
+.mainBox .piece span{padding:0;}
+.routeMessage>.piece>a.orderbtn{line-height:20px;}
+
+
+/*cityTour 页面*/
+ .mainBox.full{left:0;top:0;right:0;}
+.citytour .mainBox{background:#fff;}
+.topBar{margin-bottom:50px;}
+.bottomBar{width:96%;height:auto;margin:0 2%;}
+.picPiece{display:block;font-weight:normal;width:100%;height:150px;border-radius:5px;background-size:100%;margin-bottom:10px;position:relative;}
+.picPiece img{height:100%;position:absolute;left:0;top:0;z-index:0;border-radius:5px;}
+.picPiece p{font-weight:normal;position:absolute;bottom:0;left:0;background:rgba(0,0,0,0.7);height:2em;line-height:2em;width:100%;color:#fff;text-indent:1.5em;white-space: nowrap;text-overflow: ellipsis; -o-text-overflow: ellipsis;overflow: hidden;}
+.bottomBar p{text-indent:1.5em;}
+
+.center{font-weight:normal;}
+
+/*myinfo 页面*/
+a,a *{font-weight:normal;}
+.myinfo{width:100%;height:80px;background:#fff;border-bottom:1px solid #cdcdcd;}
+.myinfo>div{display:inline-block;}
+.myinfo>div.left{width:60px;height:60px;position:relative;top:10px;left:10px;}
+.myinfo>div.right{margin-left:20px;}
+.myinfo>div.right>strong{display:block;line-height:2em;}
+.myinfo>div.right>span{display:block;font-size:0.8em;color:#797979;}
+.infoList{width:100%;height:50px;background:#fff;margin:0;padding:0;border-bottom:1px solid #cdcdcd;}
+.infoList>li{width:33%;float:left;height:100%;text-align:center;}
+.infoList>li>a{width:100%;height:100%;text-align:center;line-height:1.5em;}
+.infoList>li>a,
+.infoList>li>a *{color:#000;font-weight:normal;}
+.infoList>li>a>span{display:block;}
+.infoList>li>a>i{color:#35A8D7;font-size:1.3em;}
+.infoList>li>a>span:last-child{color:#797979;}
+.topBar{margin-bottom:15px;}
+
+.messageBar{width:100%;height:auto;}
+.messageBar>ul>li{padding-left:10px;position:relative;padding-right:5px;background:#fff;border-bottom:1px solid #ddd;box-shadow:0 1px 2px #dcdcdc; }
+.messageBar>ul>li.seperate{margin:1em 0;}
+.messageBar>ul>li>a{line-height:2.5em;display:block;}
+.messageBar>ul>li>a>i:last-child{float:right;font-size:1.5em;position:absolute;top:50%;margin-top:-15px;color:#35A8D7;right:10px;}
+.messageBar>ul>li>a>i:first-child{margin-right:5px;    display: inline-block; width: 18px; height: 18px; border: 1px solid;text-align: center;line-height: 18px; border-radius: 12px; font-size: 14px;}
+.iconGreen{color:#2FBC3C;border-color:#2FBC3C;}
+.iconOrange{color:#FCCB00;border-color:#FCCB00;}
+.iconBlue{color:#35A8D7;border-color:#35A8D7;}
+.iconRed{color:#A71C23;border-color:#A71C23;}
+/*myorder 页面调整*/
+.myOrder .mainBox .orderMessage>ul>li>span:last-child{width:58%;}
+.mainBox .orderMessage>ul>li>img{    float: left; margin-top: 14px; margin-right: 10px;}
+
+
+/*-----------------2016-3-22 -----------------------------调整*/
+.listBox>ul>li{height:auto;}
+.listBox>ul>li>a{padding:5px 10px;line-height:1.6em;}
+.listBox>ul>li>a>span{padding:0;text-align:left;}
+.listBox>ul>li>a>span:nth-child(3){color:#666;font-size:0.8em;}
+
+.busDetail .routeMessage>.piece>a>ul>li.firstRow>span>strong{font-size:1em;}
+.busDetail .routeMessage>.piece>a.orderbtn{line-height:30px;height:30px;width:60px;}
+.busDetail .routeMessage>.piece>a.orderbtn>span{font-size:0.9em;letter-spacing: 4px;}
+
+.orderMessage li.input>select{    float: right;position: relative; top: 20%;height: 60%; border: 1px solid #ccc;border-radius: 4px; color: #555;font-family: '微软雅黑';}
+.selectSite .left{    top: 16%;left: 18.18%;right: 60%;bottom: 30%; position: absolute;}
+.selectSite .right-top{top: 16%;left: 61%;right: 24.18%;bottom: 62%;position: absolute;}
+.selectSite .right-bottom{    top: 51%;bottom: 32%;left: 61%;right: 24.18%;position: absolute;}
+.selectSite .bottom{    top: 70%; bottom: 22%;left: 18.18%;right: 26.18%;position: absolute;}
+
+.selectSite div.default{/* background:#ffc600; */border-radius:4px;}
+.selectSite .left>div{display:inline-block;    width: 45%;height: 8%;margin-top: 2%; margin-bottom: 7%;float:left;}
+.selectSite .left>div:nth-child(2n){margin-left:2%;margin-right:3%;}
+.selectSite .left>div:nth-child(2n+1){margin-left:3%;margin-right:2%;}
+
+.selectSite .right-top>div{    width: 74%;margin: 1% 3% 8% 10%; height: 21%;}
+.selectSite .right-bottom>div{    width: 74%;margin: 1% 3% 8% 10%; height: 24%;}
+
+.selectSite .bottom>div{    width: 19%; margin-left: 3%;margin-right: 3%;margin-top: 10%;margin-bottom: 10%;height: 63%;float:left;}
+.notes1,
+.notes2,
+.notes3{right:5px;}
+.notes1{bottom:25%;}
+.notes2{bottom:20%;}
+.notes3{bottom:15%;}
+
+/*机场bus 首页*/
+.searchArea{width:100%;height:auto;margin-top:20px;position:relative;height:4em;margin-bottom:10px;}	
+.searchArea>.iconInputBox{line-height:1em;height:auto;margin-bottom:10px;height:2.5em;width:45%;float:left;position:relative;}
+.searchArea>.iconInputBox:last-child{float:right;}
+.searchArea>i{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;position:absolute;left:50%;margin-left:-14px;border-radius:17px;border:1px solid #555;color:#555;top:50%;margin-top:-14px;}
+.searchArea>.iconInputBox>small{display:block;width:100%;text-align:center;color:#87898A;line-height:2em;}
+.searchArea>.iconInputBox>input{display:block;height:2.5em;border:0px;box-shadow:none;outline:none;width:100%;text-align:center;background:transparent;position:absolute;}
+.searchArea>.iconInputBox>input::-webkit-input-placeholder {color: #333;text-align:center;font-family:'微软雅黑';}
+.searchArea>.iconInputBox>input::-ms-input-placeholder{color: #333;text-align:center;font-family:'微软雅黑';}
+
+.airportBusList .mainBox .editChosen{top:102px;}
+.airportBusList .brandBox{height:100px;}
+.airportBusList .mainBox .editChosen>li>span{background-color:#fff;}
+/**/
+.seatPop>span{    position: absolute; top: 50px;left: 0;width: 100%;height: 50px;border-top: 1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc;display: block;}
+.seatPop{position:relative;padding:0 !important;}
+.scroll{position:relative;z-index:111;}
+
+
+.scrollImg>ul>li{position:relative;}
+.scrollImg>ul>li>span{position:absolute;display:block;color:#fff;background:rgba(0,0,0,0.5);bottom:0;width:100%;height:2em;font-size:1em;line-height:2em;text-indent: 1em;}
+
+.searchBus .listBox{bottom:0;}
+
+/*绑定页面  */
+.bindingpage img.img{height:135px;}
+.binding{bottom:30%;top:135px;}
+/*查询城际巴士页面*/
+.searchBus .listBox>ul>li>a>div{display:inline-block;width:25%;height:100%;    text-align: center;vertical-align: top;}
+.searchBus .listBox>ul>li>a>div:first-child{width:28%;}
+.searchBus .listBox>ul>li>a>div:nth-child(3){width:28%;}
+.searchBus .listBox>ul>li>a>div:last-child{width:14%;}
+.searchBus .listBox>ul>li>a>div>span{display:block;}
+.searchBus .listBox>ul>li>a>div>span.time{font-size:1.2em;line-height:1.8em;}
+.searchBus .listBox>ul>li>a>div>span.position{font-size:0.9em;}
+.searchBus .listBox>ul>li>a>div>span.price{color:#FF572A;font-size:1.2em;font-weight:bold;margin-top:10px;}
+.searchBus .listBox>ul>li>a>div>span.name{color:#333;line-height:1.3em;}
+
+
+.searchBus .listBox>ul>li>a>div>i{    display: block; width: 100%; height: 5px; margin-top:4px;position:relative;}
+.searchBus .listBox>ul>li>a>div>i>img{width:100%;height:100%;    position: absolute;top: 0;left: 0;}
+.searchBus .listBox>ul>li{margin-bottom:5px;}
+
+/*失物招领页面*/
+.mainBox .number{height:70px;}
+.mainBox .number>span{font-size: 0.9em;line-height: 1.4em;display: block;}
+.mainBox .lostList{top:70px;}
+.mainBox.top5{top:5px;}
+
+.airportOrder .orderMessage li>div>input[type='datetime-local'],
+.businessBusOrder .orderMessage li>div>input[type='datetime-local']{line-height:2.5em;}
+
+.businessBusOrder .orderMessage>ul>li:first-child select{margin-top:0;}
+.bindingpage2 .binding{bottom:15%;}
+input[type="datetime-local"]:before{
+    content: attr(placeholder);
+}
+
+.stopPoint .mainBox>span.tip.bgred>div{height:1.7em;}
+.stopPoint .mainBox>span.tip.bgred>div>input{width:100%;height:100%;padding:0; line-height: 1.7em;min-height: 1.7em;}
+@media (max-width:320px){
+	.mainBox .lostList>li>div>span:nth-child(2){font-size:13px;}
+	.mainBox .picUpload>div>a{width:48px;line-height:48px;height:48px;}
+	
+	.bus .exchangeInput>div.inputContainer>div>div{width:70%;height:auto;}
+	.selectSite .bottom>div{margin-top:5%;}
+	.searchBus .listBox>ul>li>a>div>span.position{font-size:0.8em;}
+	.busDetail .routeMessage>.piece>a.orderbtn{line-height:25px;height:25px;width:50px;}
+	.busDetail .routeMessage>.piece>a>ul>li:nth-child(4)>span{font-size:1em;}
+	.bindingpage2 .binding{bottom:0;top:50px;}
+}
+
+/*2016年3月31日11:17:33 shanggxl*/
+/*newAd 页面*/
+.adPop{width: 240px;height: 150px;border-radius: 6px;border: 1px solid #fff;position: relative;}
+ .adPop>div{width: 100%;height: 100%;overflow-y: scroll;}
+ .adPop>div[role=line]{position: absolute;z-index:0;display: block;left:15px;width: 200px;height: 50px;line-height: 50px;top:65px;border-top: 1px solid #888888;border-bottom: 1px solid #888888;background: transparent;}
+ .adPop>div>ul{background: transparent;position: relative;z-index: 1000;}
+ .adPop>div>ul>li{height: 50px;line-height: 50px;text-align: center;background: transparent;font-size: 15px;color: #999999;}
+ .adPop>div>ul>li.active{color: #E94601;font-weight: bold;}
+input[type="date"]:before{
+    content: attr(placeholder);
+}
+/*城际广告 -->ad页面*/ 
+.content>.title{
+ text-align: center;
+}
+
+/*小件快递-->输入*/
+.inputBtn{height: 50px;width: 100%;position: fixed;bottom: 0px;}
+.inputBtn>div{display: inline-block;position: absolute;border-radius:0px;left: 0;right: 75px;bottom:0px;top:0px;margin: 0;padding: 0;}
+.inputBtn>div>input{height: 100%;width: 100%;outline:none;border-radius: 0px;}
+.inputBtn>span{display: inline-block;width: 70px;height: 100%;line-height: 50px;color: #FFFFFF;text-align: center;position: absolute;right: 0;top: 0;}
+.inputBtn>span.orange{background: #FFBE0C;}
+
+.mainBox .orderMessage>ul>.telephone{padding-right: 5% !important;font-size: 1.2em;}
+.mainBox .orderMessage>ul>.telephone>a{color: #38c}
+.mainBox .orderMessage>ul>.smallTelephone{padding-right: 16% !important;font-size: 1.1em;color: #25A3D5}
+
+/*三个电话一开始隐藏*/
+.mainBox .orderMessage>ul>.detailPhone{display:none;font-size:1.0em;align:right;padding-right: 3% !important;};
+
+.mainBox .number>a>span{color:red}

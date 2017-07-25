@@ -1,0 +1,493 @@
+@charset "utf-8";
+/* CSS Document */
+/*ie兼容hack快查
+.test{ 
+color:red;
+color:red\9;  IE8
+*color:red;  IE6-7
+_color:red;   IE6
++color:red;   IE7
+color:red\9\0;  IE9-10
+}
+*/
+*{ font-family: "微软雅黑";padding:0; margin:0; list-style:none;text-shadow: none;}
+body{ font-size:16px !important; background: #f3f3f3; color: #353535;}
+@media (max-width:320px){
+	body{font-size:13px !important;}
+}
+img.img{ border:0; vertical-align:middle; width: 100%; height: auto;}
+a{ text-decoration: none; outline: none;}
+input:checked , input:hover, input:focus{box-shadow: 0 0 2px #0CF;outline:1px solid rgba(255,255,255,0.2); border:1px solid #C4E2EC;}
+
+.clear{
+    clear: both;
+}
+.mrt5{ margin-top: 5px;}
+.overtext{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+    width: 96%;
+}
+.box{
+    max-width: 640px;
+    margin: 0 auto;
+}
+.topColor{
+    background: #2ba3d5;
+    height:3em;
+    width: 100%;
+}
+.topIcon{
+    width: 7.8%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height:2.8em;
+    line-height: 2.8em;
+}
+.topIcon2{
+    width: 7.8%;
+    float: right;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height:2.8em;
+    line-height: 2.8em;
+}
+.topTitle{
+    float: left;
+    font: 1.3em;
+    color:#fff;
+    height: 3em;
+    line-height: 3em;
+}
+.footer{
+    background: #3dbff0;
+    height:3em;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.iconBox{
+    width: 33%;
+    border-right: 1px solid #fff;
+    height: 3em;
+    float: left;
+}
+.iconBox:hover,.iconBox:focus{
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+}
+.iconBox:last-child{
+    border-right: 0;
+}
+.iconBox1{
+    width: 24.7%;
+    border-right: 1px solid #fff;
+    height: 3em;
+    float: left;
+}
+.iconBox1:hover,.iconBo1:focus{
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+}
+.iconBox1:last-child{
+    border-right: 0;
+    width: 25%;
+}
+.icon{
+    width: 30%;
+    height: 2.8em;
+    float: left;
+    margin-left: 15%;
+    margin-right: 8%;
+    line-height: 2.8em;
+}
+
+.iconBox p{
+    float: left;
+    height: 3em;
+    width: 30%;
+    color: #fff;
+    margin-top:10%;
+    font-size: 0.9em;
+    line-height: 1.1em;
+}
+.iconBox p[role=mid]{
+    width: 40%;
+    font-size: 0.85em;
+    line-height: 2.2em;
+}
+.iconBox1 p{
+    float: left;
+    height: 3em;
+    width: 30%;
+    color: #fff;
+    margin-top:10%;
+    font-size: 0.8em;
+    line-height: 1.1em;
+}
+.iconBox1 p[role=mid]{
+    width: 40%;
+    font-size: 0.75em;
+    line-height: 2.2em;
+}
+@media screen and (min-width: 768px){
+    .topIcon{
+        max-width: 35px;
+    }
+    .topIcon2{
+        max-width: 35px;
+    }
+    .icon{
+        width: 45px;
+    }
+    .iconBox p{
+        font-size: 1.3em;
+        width: 50%;
+        line-height: 5px;
+    }
+    .iconBox p[role=mid]{
+        font-size: 1.3em;
+        width: 50%;
+        line-height: 5px;
+    }
+    .iconBox1{
+        width: 24.8%;
+    }
+    .iconBox1 p{
+        font-size: 1.3em;
+        width: 50%;
+        line-height: 5px;
+
+    }
+    .iconBox1 p[role=mid]{
+        font-size: 1.3em;
+        width: 50%;
+        line-height: 5px;
+    }
+}
+.mainBox{
+    padding: 1.5%;
+}
+.putBox{
+    width: 96%;
+    padding:2% 1.5%;
+    background: #fff;
+    border: 1px solid #eee;
+    height: auto;
+    margin: 5px auto;
+}
+.putBox:hover,.putBox:focus{
+    background: #fcfcfc;
+}
+.putBox p{
+    text-indent: 15px;
+    display: inline-block;
+    font-size: 1.1em;
+    line-height: 1.45em;
+}
+.putIcon-left{
+    float: left;
+    width: 7.8%;
+}
+.putIcon-right{
+    float: right;
+    width: 7.8%;
+}
+.tips{
+    color: #c5c5c5;
+    font-size: 0.8em;
+}
+.line1{
+    margin: 10px auto;
+    border-bottom: 1px solid #eee;
+}
+.input-default{
+    background: #;
+}
+/*大巴在线选座*/
+.selectSite{
+    width: 100%;
+    position: relative;
+}
+.siteA1{
+    position: absolute;
+    left: 18.18%;
+    top:19%;
+}
+.siteA2{
+    position: absolute;
+    left: 30%;
+    top:19%;
+}
+.siteA3{
+    position: absolute;
+    left: 18.18%;
+    top:25.5%;
+}
+.siteA4{
+    position: absolute;
+    left: 30%;
+    top:25.5%;
+}
+.siteA5{
+    position: absolute;
+    left: 18.18%;
+    top:32%;
+}
+.siteA6{
+    position: absolute;
+    left: 30%;
+    top:32%;
+}
+.siteA7{
+    position: absolute;
+    left: 18.18%;
+    top:38.6%;
+}
+.siteA8{
+    position: absolute;
+    left: 30%;
+    top:38.6%;
+}
+.siteA9{
+    position: absolute;
+    left: 18.18%;
+    top:45.3%;
+}
+.siteA10{
+    position: absolute;
+    left: 30%;
+    top:45.3%;
+}
+.siteA11{
+    position: absolute;
+    left: 18.18%;
+    top:51.9%;
+}
+.siteA12{
+    position: absolute;
+    left: 30%;
+    top:51.9%;
+}
+.siteA13{
+    position: absolute;
+    left: 18.18%;
+    top:58.4%;
+}
+.siteA14{
+    position: absolute;
+    left: 30%;
+    top:58.4%;
+}
+.siteA15{
+    position: absolute;
+    left: 18.18%;
+    top:65%;
+}
+.siteA16{
+    position: absolute;
+    left: 30%;
+    top:65%;
+}
+.siteA17{
+    position: absolute;
+    left: 18.18%;
+    top:71.6%;
+}
+.siteA18{
+    position: absolute;
+    left: 30%;
+    top:71.6%;
+}
+.siteA19{
+    position: absolute;
+    left: 18.18%;
+    top:78.2%;
+}
+.siteA20{
+    position: absolute;
+    left: 30%;
+    top:78.2%;
+}
+.siteA21{
+    position: absolute;
+    left: 63%;
+    top:19%;
+}
+.siteA22{
+    position: absolute;
+    left: 63%;
+    top:25.5%;
+}
+.siteA23{
+    position: absolute;
+    left: 63%;
+    top:32%;
+}
+.siteA24{
+    position: absolute;
+    left: 63%;
+    top:38.6%;
+}
+.siteA25{
+    position: absolute;
+    left: 63%;
+    top:45.3%;
+}
+.siteA26{
+    position: absolute;
+    left: 63%;
+    top:51.9%;
+}
+.siteA27{
+    position: absolute;
+    left: 63%;
+    top:58.4%;
+}
+.siteA28{
+    position: absolute;
+    left: 63%;
+    top:65%;
+}
+.siteA29{
+    position: absolute;
+    left: 63%;
+    top:71.6%;
+}
+.siteA30{
+    position: absolute;
+    left: 63%;
+    top:78.2%;
+}
+.siteA31{
+    position: absolute;
+    left: 18.18%;
+    top:86%;
+}
+.siteA32{
+    position: absolute;
+    left: 33%;
+    top:86%;
+}
+.siteA33{
+    position: absolute;
+    left: 48%;
+    top:86%;
+}
+.siteA34{
+    position: absolute;
+    left: 63%;
+    top:86%;
+}
+.default{
+    width: 10.5%;
+    height: 5%;
+    border: 0;
+    border-radius: 8px;
+}
+.selected{
+    background: #c5c5c5;
+}
+.optional{
+    background: #ffbd0c;
+}
+.choose{
+    background: #4ab56b;
+}
+.notes1{
+    position: absolute;
+    right:5.8%;
+    bottom: 20%;
+}
+.notes2{
+    position: absolute;
+    right:5.8%;
+    bottom: 15%;
+}
+.notes3{
+    position: absolute;
+    right:5.8%;
+    bottom: 10%;
+}
+.notes{
+    color: #353535;
+    font-size: 0.8em;
+}
+.notes-site{
+    width: 12px;
+    height: 12px;
+    border: 0;
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 5px;
+}
+/*大巴在线选座*/
+
+/*我的服务*/
+.serviceList{
+    background: #fff;
+    border: 1px solid #c5c5c5;
+    position: relative;
+    max-height:192px ;
+    overflow: hidden;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.sev-bg{
+    background: rgba(0,0,0,.8);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3em;
+}
+.sev-h1{
+    font-weight: normal;
+    color: #fff;
+    position: absolute;
+    bottom: 13px;
+    left: 10px;
+    font-size: 1.3em;
+    z-index: 10;
+}
+.content{
+    margin-top: 10px;
+}
+.content h1{
+    font-size: 1.5em;
+}
+.content blockquote{
+    font-size: 0.8em;
+color: #c5c5c5;
+margin: 10px auto;
+}
+.content p{
+    text-indent: 2em;
+    line-height: 1.9em;
+    padding: 10px;
+}
+/*我的服务*/
+
+/*2016年4月8日  lfh-->view*/
+.lfhContent p{
+	text-align:center;
+    line-height: 1.9em;
+    padding: 10px;
+}
+
+/*ad页面*/
+.content p.title{
+	text-indent:0;
+	text-align:center;
+    line-height: 1.9em;
+    padding: 10px;
+}
+
+/*完善信息页面*/
+.box.bindingpage{
+	height:100%;
+}
+.mainBox.userReg{
+	height:inherit;
+}
